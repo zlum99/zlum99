@@ -1,0 +1,119 @@
+
+int counter =0;
+
+
+float randr = 0;
+float randg = 0;
+float randb = 0;
+
+float scl = .25;
+
+int offsetX = 100;
+int offsetY = 100;
+
+String gridName = "Gary";
+
+void setup() {
+  size(500,500);
+  background(0);
+  smooth();
+  noStroke();
+  Float a = 0.0;
+  float inc = TWO_PI/10.0;
+  println(" The inc = " + inc);
+  stroke(0, 0, 255);
+  frameRate(5);
+ }
+
+  
+void draw() {
+fill(255,0,0,120);
+stroke(0,255,0);
+ellipse(400,400,400,400);
+ellipse(350,350,350,350);
+ellipse(300,300,300,300);
+ellipse(250,250,250,250);
+ellipse(200,200,200,200);
+ellipse(150,150,150,150);
+ellipse(100,100,100,100);
+ellipse(50,50,80,80);
+ellipse(25,25,60,60);
+
+
+noStroke();
+
+  fill(0,0,255,120);
+  rect(0, counter, width - random(50), 10);
+  fill(255,165,0,120);
+  rect(counter, 0, 10, height - random(50));
+
+  rect(counter,0,20,20);
+  
+if (counter > height) {
+  background(0);
+  counter = 0;
+} else {
+  counter+=20;
+}
+  println(counter);
+
+ 
+ float xloc = 0;
+  
+ 
+  for ( float a =0; a < 500; a+= .10 ) {
+    
+    float yloc = (sin(a)  * (height/2)) + height/2;
+  
+    ellipse(xloc, yloc, 6, 6);
+    
+    xloc+=2;
+    
+  for (int i = 0; i < 300; i += 50) {
+  for (int j = 0; j < 300; j += 50) {
+      //println("i is " + i);
+      //println("j is " + j);
+      //       0-255
+      randr = random(255);
+      randg = random(255);
+      randb = random(255);
+      
+  
+      fill(randr,randg,randb);
+      //println(gridName + ", now has a fill value of " + rand);
+    }
+  }
+
+
+
+
+  
+ 
+ //converting to floats to create decimal fractions 
+  float ratio = 0.6;
+  float range = 0.5;
+  scl = ratio/range;
+  println (ratio/range);
+
+ 
+  }
+  record();
+}
+
+void record() {
+
+    if (frameCount < 300 ) {
+
+   saveFrame("images/testr_####.jpg");
+
+   } else {
+
+     exit();
+
+   }
+
+
+
+
+
+}

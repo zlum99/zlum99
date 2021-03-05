@@ -1,0 +1,109 @@
+int value = 0;
+int tCounter = 0;
+int gSize = 50;
+PImage b;
+PImage b2;
+PFont f;
+
+void setup() {
+  size(800, 800);
+  rectMode(CENTER); 
+  background(0);
+  noStroke();  
+  // Load in 2 different images and name them below
+  // Images must be in the "data" directory to load correctly
+  b = loadImage("bacon.jpg"); 
+  b2 = loadImage("stephencurry.jpg");
+  
+    //printArray(PFont.list());
+  //load font
+  f = createFont("Arial", 30);
+  //set the font for drawing
+  textFont(f);
+  // set color of text
+  fill(0, 255, 0);
+  //draw out text
+ 
+}
+
+
+void draw() {
+  background(255-value); 
+  fill(0,0,255); 
+  ellipse(width/2, height/2, 200, 200);
+  text("Bacon is my favorite breakfast food", tCounter, 200);
+  text("Curry is my favorite basketball player", tCounter, 600);
+  tCounter ++;
+
+  
+
+  
+  if (!mousePressed) {
+    noTint();
+    image(b, 0, 0, width/2, height/2);
+    image(b2, width/2, height/2, width/2, height/2);
+  } else {
+
+    int checkCounter = 0; 
+
+    for ( int i = 0; i < height; i+= gSize) {
+
+      // add extra count to make it offset in the next row
+      checkCounter++;
+
+      for ( int j = 0; j < width; j+=(gSize) ) {  
+        
+           // mod operator  %  
+        if ( (checkCounter % 2) == 0 ) {
+          image(b2, j, i, gSize, gSize);
+        } else {
+          tint(255, 40);  // Apply transparency without changing color
+          image(b, j, i, gSize, gSize);
+        }
+        checkCounter++;
+      }
+    }
+  }
+    record();
+}
+  
+
+
+void mouseMoved() {
+  value = value + 1;
+  if (value > 255) {
+    value = 0;
+  }
+}
+
+void keyPressed() { 
+
+  if ( key == 'w' || key == 'Z' ) { 
+    // example of toggle logic 
+    if (value == 0) { 
+      value = 255;
+    } else { 
+      value = 0;
+    }
+    println(value);
+  }
+}
+
+void record() {
+
+    if (frameCount < 300 ) {
+
+   saveFrame("image/testr_####.jpg");
+
+   } else {
+
+     exit();
+
+   }
+
+
+
+
+
+}
+ 

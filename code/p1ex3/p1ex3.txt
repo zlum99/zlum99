@@ -1,0 +1,139 @@
+int value= 0;
+int counter1 = 90;
+int counter2 = -45;
+
+void setup() {
+  size(800, 800);
+  background(20);
+  noStroke();
+  frameRate(10);
+}
+
+void draw() {
+  background(0);
+  
+  pushMatrix();
+  translate(300,400);
+  rotate(radians(counter1));
+  scale(.5);
+    wSmile();
+  popMatrix();
+  
+
+  pushMatrix();
+  translate (300,600);
+  rotate(radians(counter2));
+  scale(.9);
+  rSmile();
+  popMatrix();
+  
+ counter1 ++;
+ counter2 --;
+ 
+  if (value == 0) {
+    value=255;
+    sprinkleYellow();
+  } else {
+    value = 0;
+    sprinkleBlue();
+  }
+
+record();
+}
+  
+
+
+  void wSmile() {
+        
+        color cbody = color(0,0,0);
+        head(color(255,255,255));
+        mouth(color(0,0,0));
+        leye(color(0,0,0));
+        reye(color(0,0,0));
+  
+     
+     
+     }
+     
+  void rSmile() {
+        
+        color cbody = color(255,0,0);
+        head(color(255,0,0));
+        mouth(color(0,0,0));
+        leye(color(0,0,0));
+        reye(color(0,0,0));
+     }
+
+
+
+  void  head(color c ) {
+
+      fill(c); 
+      ellipse(width/2,height/2,80,80);
+
+
+  }
+
+
+  void leye(color c) {
+
+      fill(c); 
+      ellipse(width/2 + -15 ,height/2 + - 20 ,10,10);
+
+  }
+
+   void reye(color c) {
+
+      fill(c); 
+      ellipse(width/2 + 15 ,height/2 + - 20 ,10,10);
+
+  }
+  
+  void mouth(color c) {
+    
+    fill(c);
+    rect(width/2 - 18,height/2 + 10, 40,10);
+  }
+  
+
+ 
+
+    
+
+   void sprinkleYellow() {
+  
+  for (int i = 0; i < 30; i++) {
+    fill(255,255,0);
+    rect(random(width), random(height), 15, 15);
+  }
+}
+
+void sprinkleBlue() {
+  
+  for (int i = 0; i < 30; i++) {
+    fill(0,0,255);
+    rect(random(width), random(height), 15, 15);
+    }
+}
+
+void record() {
+
+    if (frameCount < 300 ) {
+
+   saveFrame("image/testr_####.jpg");
+
+   } else {
+
+     exit();
+
+   }
+
+
+
+
+
+}
+
+
+
+  

@@ -1,0 +1,163 @@
+char currentkey = '1';
+
+color bgc = color(255);
+int red = 0;
+int green = 0;
+int blue = 0;
+int redValue = 1;
+int greenValue = 1;
+int blueValue = 1;
+int colorMode = 1;
+int circleSize= 0;
+int rectSize = 0;
+
+
+
+void setup() {
+
+size(800, 800);
+background(0);
+smooth();
+}
+
+void draw() {
+
+// triggering the clear_print function
+if(keyPressed) {
+clear_print(); 
+}
+// triggering the newkeychoice
+if(mousePressed) {
+  drawChoice(); 
+}
+
+}
+
+
+void drawChoice() {
+  // the key mapping if statemens that you can change to do anything you want.
+  // just make sure each key option has the a stroke or fill and then what type of 
+  // graphic function
+ 
+   
+ // key global variable contains whatever key was last pressed 
+ char currentkey = key;
+   
+switch(currentkey) {
+case '1': 
+  println("1");  // Turquoise line
+  ZLdrawline(color(175,238,238), mouseX, mouseY, pmouseX, pmouseY); 
+  break;
+case '2': 
+  println("2");  // gold fat line
+  ZLdrawFatLine(color(255,215,0), mouseX, mouseY, pmouseX, pmouseY);
+  break;
+case '3': 
+  println("3");  // red ellipses
+  ZLdrawRedEllipse();
+  break;
+case '4': 
+  println("4");  // green rectangles
+  ZLdrawGreenRect ();
+  break;
+case '5': 
+  println("5");  //brown fat line
+  ZLdrawFatLine(color(139,69,19), mouseX, mouseY, pmouseX, pmouseY);
+  break;
+ 
+case '6': 
+  println("6");  // erase with bg color
+  ZLeraser(bgc,mouseX, mouseY,30);
+  break;
+default:             // Default executes if the case labels
+  println("None");   // don't match the switch parameter
+  break;   
+}
+record(); 
+}
+
+void ZLdrawline(color k, int lx,int ly, int px,int py) {
+ // strokeWeight(1);
+  stroke(k);
+  line(lx, ly, px, py); 
+}
+
+void ZLdrawFatLine(color k, int lx,int ly, int px,int py) {
+  strokeWeight(10);
+  stroke(k);
+  line(lx, ly, px, py); 
+}
+
+void ZLdrawRedEllipse () {
+if (mousePressed) {
+stroke(0, 0, 0, 50);
+fill(red, green, blue, 50);
+ellipse(mouseX, mouseY, 50, 50);
+
+
+if (mousePressed) {
+fill(255, 0, 0);
+ellipse(mouseX, mouseY, 50, 50);
+} else {
+circleSize = 0;
+
+}
+}
+}
+
+void ZLdrawGreenRect () {
+if (mousePressed) {
+stroke(0, 0, 0, 50);
+fill(red, green, blue, 50);
+rect(mouseX, mouseY, 50, 50);
+
+
+if (mousePressed) {
+fill(0, 255, 0);
+rect(mouseX, mouseY, 50, 50);
+} else {
+rectSize = 0;
+
+}
+}
+}
+
+void ZLeraser(color k,int lx,int ly,int sz) {
+  stroke (0);
+  rect(lx, ly, sz,sz); 
+  fill(0);
+}
+
+
+void clear_print() {
+
+// these 2 options let you choose between clearing the background
+// and saveing the current image as a file.
+  if (key == 'x' || key == 'X') {
+     background(0);
+  } else if (key == 'p' || key == 'P') {
+     saveFrame("drawings/drawing_####.png");
+     //this will save the name as the intials and a random counting number.
+     // it will always be larger in value then the last one.
+     delay(500);
+  }
+
+
+}
+
+void record() {
+
+    if (frameCount < 500 ) {
+
+   saveFrame("image/testr_####.jpg");
+
+   } else {
+
+     exit();
+
+   }
+
+
+
+
+}

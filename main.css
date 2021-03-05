@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/*INDEX PAGE STYLE*/
+body {
+  overflow-x: hidden;
+  /* remove horizantal scroll */
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin: 0;
+  width: 100vw;
+}
+
+.container {
+  width: 85vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+#interactive {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -999;
+  /*order send to back*/
+}
+
+h1 {
+  color: #fff;
+  padding: 45px;
+  padding-left: 0;
+}
+
+ul {
+  color: #fff;
+  float: right;
+  margin-top: -90px;
+}
+
+ul li {
+  float: left;
+  padding: 20px;
+  list-style-type: none;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.effect:hover {
+  color: blue;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+#about {
+  padding-right: 0;
+}
+
+footer {
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+  font-size: 2em;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.icon {
+  padding: 15px;
+}
+
+p {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+h3 {
+  color: black;
+}
+
+a p {
+  font-size: 18px;
+  color: blue;
+  text-decoration: none;
+}
+
+.page {
+  width: 85vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+/*PORTFOLIO PAGE STYLES */
+.gallery {
+  width: 85vw;
+  margin: 0 auto;
+}
+
+.imagegroup {
+  width: 48%;
+  color: #fff;
+  display: inline-block;
+  padding-bottom: 30px;
+  text-align: center;
+  font-style: italic;
+  position: relative;
+}
+
+.imagegroup1 {
+  width: 33%;
+  color: #fff;
+  display: inline-block;
+  padding-bottom: 9px;
+  text-align: center;
+  font-style: italic;
+  position: relative;
+}
+
+.imagegroup2 {
+  width: 48%;
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  font-style: italic;
+  position: relative;
+}
+
+.imagegroup img {
+  display: block;
+  padding-bottom: 8px;
+}
+
+.selected {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.overlay {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.imagegroup:hover .overlay {
+  opacity: 100%;
+}
+
+.imagegroup2:hover .overlay {
+  opacity: 100%;
+}
+
+.text {
+  color: #fff;
+  position: absolute;
+  background-color: #333;
+  padding: 5px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.footerflex {
+  position: relative;
+}
+
+.leftside {
+  float: left;
+}
+
+.rightside {
+  float: right;
+}
+
+.middle {
+  float: none;
+}
+
+.leftside1 {
+  float: left;
+  position: relative;
+  left: -250px
+}
+
+.rightside1 {
+  float: right;
+  position: relative;
+  left: -200px;
+}
+
+.leftside2 {
+  float: left;
+  position: relative;
+  left: -100px;
+}
+
+/*ABOUT PAGE STYLES */
+.twocolumns {
+  width: 100%;
+}
+
+#me {
+  width: 48%;
+  display: block;
+  float: left;
+  border-radius: 50%;
+}
+
+#bio {
+  width: 48%;
+  color: #fff;
+  float: right;
+}
+
+#statement {
+  width: 80%;
+  line-height: 1.3;
+  color: #fff;
+  display: inline-block;
+  text-align: left;
+}
+
+button {
+  width: 300px;
+  padding: 15px;
+  background-color: transparent;
+  border: solid #fff 2px;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 70px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #0f0b30;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* ARTWORK PAGE STYLES */
+h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+h3 {
+  text-align: center;
+  color: #fff;
+  width: 75%;
+  margin-top: 30px;
+}
+
+.description {
+  width: 50%;
+  line-height: 1.3;
+  color: #fff;
+  padding: 30px;
+  text-align: left;
+}
+
+.footerflex {
+  position: relative;
+}
+
+.navigation {
+  width: 100vw;
+  padding: 60px 0;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  background-color: #0f0b30;
+}
+
+.previous {
+  float: left;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.previous a, .previous p {
+  text-decoration: none;
+  color: white;
+}
+
+.previous h3 {
+  color: white;
+  margin-top: 0px;
+}
+
+.next {
+  float: right;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.next a, .next p {
+  text-decoration: none;
+  color: white;
+}
+
+.next h3 {
+  color: white;
+  margin-top: 0px;
+}
+
+.exercise-row {
+  width: 100%;
+  text-align: left;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.exercise1-img {
+  width: 40%;
+  margin-right: 30px;
+  float: left;
+}
+
+.exercise2-img {
+  width: 40%;
+  margin-right: 30px;
+  float: left;
+}
+
+.exercise3-img {
+  width: 40%;
+  margin-right: 30px;
+  float: left;
+}
+
+.project-img {
+  width: 40%;
+  margin-right: 30px;
+  float: left;
+}
+
+.exercise-description {
+  width: 100%;
+  color: #fff;
+  padding: 30px;
+}
+
+/* When you put a period in front of a CSS declaration, it indicates you are
+creating a new class. We can apply this to div elements to create different
+portfolio entries */
