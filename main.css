@@ -222,7 +222,7 @@ a p {
 }
 
 #me {
-  width: 48%;
+  width: 34%;
   display: block;
   float: left;
   border-radius: 50%;
@@ -286,7 +286,9 @@ h3 {
 
 .footerflex {
   position: relative;
+  left: -35px;
 }
+
 
 .navigation {
   width: 100vw;
